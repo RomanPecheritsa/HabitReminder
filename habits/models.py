@@ -1,5 +1,4 @@
 from django.contrib.postgres.fields import ArrayField
-from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -72,36 +71,3 @@ class Habit(models.Model):
         return (
             f"{'Приятная' if self.is_pleasant else 'Полезная'} привычка: {self.action}"
         )
-
-    def clean(self):
-        if self.reward and self.related_habit:
-            raise ValidationError(
-                "Нельзя указать одновременно и вознаграждение, и связанную привычку"
-            )
-
-        if self.duration and self.duration > 120:
-            raise ValidationError("Время выполнения не может превышать 120 секунд")
-
-        if self.related_habit and not self.related_habit.is_pleasant:
-            raise ValidationError(
-                "Связанной привычкой может быть только приятная привычка"
-            )
-
-        if self.is_pleasant and (self.reward or self.related_habit):
-            raise ValidationError(
-                "Приятная привычка не может иметь вознаграждение или связанную привычку"
-            )
-
-        if self.periodicity_type == self.Periodicity.WEEKLY and (
-            not self.weekdays or len(self.weekdays) < 1
-        ):
-            raise ValidationError(
-                "Привычка должна выполняться хотя бы раз в 7 дней. Укажите дни недели"
-            )
-
-        if self.periodicity_type == self.Periodicity.DAILY and self.weekdays:
-            raise ValidationError("Для ежедневной привычки дни недели не указываются")
-
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
