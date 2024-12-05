@@ -6,6 +6,7 @@ from habits.serializers import HabitSerializer
 
 
 class HabitViewSet(viewsets.ModelViewSet):
+    queryset = Habit.objects.all()
     serializer_class = HabitSerializer
     permission_classes = (IsOwner,)
 
