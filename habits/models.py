@@ -3,6 +3,13 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 
+class PublicHabitManager(models.Manager):
+    """Менеджер для работы только с приватными привычками"""
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_public=True)
+
+
 class Habit(models.Model):
     """Модель универсальной привычки с поддержкой периодичности"""
 
@@ -39,7 +46,7 @@ class Habit(models.Model):
         blank=True,
         null=True,
         verbose_name="Дни недели",
-        help_text="Если выбрано 'По дням недели', укажите дни выполнения.",
+        help_text="Если выбрано 'По дням недели', укажите дни выполнения",
     )
     reward = models.CharField(
         max_length=255, blank=True, null=True, verbose_name="Вознаграждение"
@@ -52,6 +59,9 @@ class Habit(models.Model):
         verbose_name="Связанная привычка",
         limit_choices_to={"is_pleasant": True},
     )
+
+    objects = models.Manager()
+    public_habits = PublicHabitManager()
 
     class Meta:
         verbose_name = "Привычка"
