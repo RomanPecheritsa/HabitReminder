@@ -13,6 +13,7 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-05T16:42:22.462Z",
+      "tg_chat_id": "1175343662",
       "groups": [],
       "user_permissions": []
     }
@@ -31,6 +32,7 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-05T16:42:22.462Z",
+      "tg_chat_id": null,
       "groups": [],
       "user_permissions": []
     }
