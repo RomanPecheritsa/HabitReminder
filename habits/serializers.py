@@ -8,4 +8,4 @@ class HabitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Habit
         fields = "__all__"
-        read_only_fields = ('user',)
+        read_only_fields = ("user",)
