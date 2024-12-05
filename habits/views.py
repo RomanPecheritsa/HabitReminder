@@ -1,4 +1,4 @@
-from rest_framework import viewsets, generics
+from rest_framework import generics, viewsets
 
 from habits.models import Habit
 from habits.permissions import IsOwner
@@ -19,4 +19,3 @@ class HabitViewSet(viewsets.ModelViewSet):
 class PublicListAPIView(generics.ListAPIView):
     queryset = Habit.public_habits.all()
     serializer_class = HabitSerializer
-
