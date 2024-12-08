@@ -1,0 +1,244 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$V4OONRihLlrNe17Z0Dz5SJ$Xr8sCNi87u9hecLNk1POQnpvfrqJ3PjeJRqp7SP2Lmk=",
+      "last_login": "2024-12-05T16:42:22.462Z",
+      "is_superuser": false,
+      "username": "test1",
+      "first_name": "I AM",
+      "last_name": "TEST USER 1",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-05T16:42:22.462Z",
+      "tg_chat_id": "1175343662",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$V4OONRihLlrNe17Z0Dz5SJ$Xr8sCNi87u9hecLNk1POQnpvfrqJ3PjeJRqp7SP2Lmk=",
+      "last_login": "2024-12-05T16:42:22.462Z",
+      "is_superuser": false,
+      "username": "test2",
+      "first_name": "I AM",
+      "last_name": "TEST USER 2",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-05T16:42:22.462Z",
+      "tg_chat_id": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "place": "Квартира",
+      "time": "19:00:00",
+      "action": "Пропылесосить квартиру",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "WEEKLY",
+      "weekdays": "[\"2\", \"4\", \"6\"]",
+      "reward": "Сьесть мороженное",
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "place": "Парк",
+      "time": "17:00:00",
+      "action": "Сьесть яблоко",
+      "is_pleasant": true,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "place": "Парк",
+      "time": "16:00:00",
+      "action": "Прочитать книгу",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": 2
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "place": "Гараж",
+      "time": "15:00:00",
+      "action": "Помыть машину",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "WEEKLY",
+      "weekdays": "[\"6\"]",
+      "reward": "Выпить сок",
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "place": "Квартира",
+      "time": "21:00:00",
+      "action": "Принять ванную",
+      "is_pleasant": true,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "place": "Спортзал",
+      "time": "20:30:00",
+      "action": "Покачать банки",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": 5
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "place": "Квартира",
+      "time": "19:00:00",
+      "action": "Помыть окна",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "WEEKLY",
+      "weekdays": "[\"2\", \"4\", \"6\"]",
+      "reward": "Сьесть йогурт",
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "place": "Парк",
+      "time": "17:00:00",
+      "action": "Сьесть голубя",
+      "is_pleasant": true,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "place": "Парк",
+      "time": "16:00:00",
+      "action": "Прочитать комиксы",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": true,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": 8
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "place": "Гараж",
+      "time": "15:00:00",
+      "action": "Помыть мотоцикл",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "WEEKLY",
+      "weekdays": "[\"6\"]",
+      "reward": "Выпить пиво",
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 11,
+    "fields": {
+      "user": 2,
+      "place": "Квартира",
+      "time": "21:00:00",
+      "action": "Принять ванную",
+      "is_pleasant": true,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": null
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 12,
+    "fields": {
+      "user": 2,
+      "place": "Спортзал",
+      "time": "20:30:00",
+      "action": "Подтянуться 100 раз",
+      "is_pleasant": false,
+      "duration": 100,
+      "is_public": false,
+      "periodicity_type": "DAILY",
+      "weekdays": null,
+      "reward": null,
+      "related_habit": 11
+    }
+  }
+]
