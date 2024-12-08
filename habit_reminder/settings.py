@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_spectacular",
     "django_celery_beat",
-    'corsheaders',
+    "corsheaders",
     "users",
     "habits",
 ]
@@ -39,15 +39,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware'
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000'
-]
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:8000'
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:8000"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8000"]
 
 ROOT_URLCONF = "habit_reminder.urls"
 
