@@ -2,6 +2,18 @@ version: "3.8"
 
 services:
 
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: on-failure
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    expose:
+      - "6379"
+
   postgres:
     image: postgres:16.3-alpine
     container_name: postgres
@@ -44,6 +56,36 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+  celery:
+    container_name: celery_worker
+    build: .
+    tty: true
+    command: celery -A habit_reminder worker --loglevel=info
+    restart: on-failure
+    env_file:
+      - .env
+    volumes:
+      - ./:/app/
+    depends_on:
+      - redis
+      - django
+      - postgres
+
+  celery-beat:
+    container_name: celery_beat
+    build: .
+    tty: true
+    command: celery -A habit_reminder beat --loglevel=info
+    restart: on-failure
+    env_file:
+      - .env
+    volumes:
+      - ./:/app/
+    depends_on:
+      - redis
+      - django
+      - postgres
 
 volumes:
   postgres_data:
